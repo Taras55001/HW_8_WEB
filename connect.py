@@ -1,6 +1,7 @@
 import configparser
 import pathlib
 
+from mongoengine import connect
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -16,6 +17,7 @@ uri = f"mongodb+srv://{username}:{password}@{database}/?retryWrites=true&w=major
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
+session_hw = connect(host=uri, ssl=True)
 
 db = client.home_work_8
 sample_con = client.sample_airbnb

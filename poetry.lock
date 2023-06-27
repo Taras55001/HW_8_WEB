@@ -49,6 +49,21 @@ files = [
 python-dateutil = ">=2.4"
 
 [[package]]
+name = "mongoengine"
+version = "0.27.0"
+description = "MongoEngine is a Python Object-Document Mapper for working with MongoDB."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mongoengine-0.27.0-py3-none-any.whl", hash = "sha256:c3523b8f886052f3deb200b3218bcc13e4b781661e3bea38587cc936c80ea358"},
+    {file = "mongoengine-0.27.0.tar.gz", hash = "sha256:8f38df7834dc4b192d89f2668dcf3091748d12f74d55648ce77b919167a4a49b"},
+]
+
+[package.dependencies]
+pymongo = ">=3.4,<5.0"
+
+[[package]]
 name = "pymongo"
 version = "4.4.0"
 description = "Python driver for MongoDB <http://www.mongodb.org>"
@@ -192,4 +207,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "a83acf11cc8129e6fc974a597562b7471240fcfb81f5fe201c19bf1aee7ef3c5"
+content-hash = "a52cea55cc067cbbd015d151d6b3421a86f668369cb7c0621a93b05d596578d3"
