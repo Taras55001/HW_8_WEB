@@ -1,7 +1,18 @@
+import configparser
+import pathlib
+
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://hw8webgoit:Goitpython12@cluster0.0uvhgzn.mongodb.net/?retryWrites=true&w=majority"
+file_config = pathlib.Path(__file__).parent.joinpath('config.ini')
+config = configparser.ConfigParser()
+config.read(file_config)
+
+username = config.get('DEV_DB', 'USER')
+password = config.get('DEV_DB', 'PASSWORD')
+database = config.get('DEV_DB', 'DB_NAME')
+
+uri = f"mongodb+srv://{username}:{password}@{database}/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
