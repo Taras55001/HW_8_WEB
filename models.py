@@ -1,6 +1,6 @@
 
 from mongoengine import Document, EmbeddedDocument
-from mongoengine.fields import ReferenceField, DateTimeField, EmbeddedDocumentField, ListField, StringField
+from mongoengine.fields import ReferenceField, DateTimeField, EmbeddedDocumentField, ListField, StringField, BooleanField
 
 
 class Autor(Document):
