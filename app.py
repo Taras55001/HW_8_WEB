@@ -1,19 +1,22 @@
 from pprint import pprint
 
-from connect import session_hw
+
+from connect import cache
 from models import Autor, Post, Tag
 
-
+@cache
 def find_tag(tag_name):
-    posts = Post.objects(tags__name=tag_name)
+    posts = Post.objects(tags__name__contains=tag_name)
     return posts
 
+@cache
 def find_tags(*tag_names):
     posts = Post.objects(tags__name__all=tag_names)
     return posts
 
+@cache
 def find_author(author_name):
-    author = Autor.objects(fullname=author_name).first()
+    author = Autor.objects(fullname__contains=author_name).first()
     if author:
         posts = Post.objects(author=author)
         return posts

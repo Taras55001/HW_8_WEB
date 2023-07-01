@@ -4,6 +4,13 @@ import pathlib
 from mongoengine import connect
 # from pymongo.mongo_client import MongoClient
 # from pymongo.server_api import ServerApi
+import redis
+from redis_lru import RedisLRU
+
+
+# docker run --name redis-cache -d -p 6379:6379 redis
+r = redis.Redis(host="localhost", port=6379, password=None, db=0)
+cache = RedisLRU(r)
 
 file_config = pathlib.Path(__file__).parent.joinpath('config.ini')
 config = configparser.ConfigParser()

@@ -11,6 +11,7 @@ faker = "^18.10.1"
 pymongo = "^4.4.0"
 redis = "^4.6.0"
 mongoengine = "^0.27.0"
+redis-lru = "^0.1.2"
 
 
 [build-system]
