@@ -9,6 +9,14 @@ class Autor(Document):
     born_location = StringField(max_length=50)
     description = StringField()
 
+class Contact(Document):
+    fullname = StringField(max_length=100, required=True)
+    email = StringField(max_length=100, required=True)
+    sent = BooleanField(default=False)
+    phone_number = StringField(max_length=25)
+    communication_method = StringField(max_length=10)
+    meta = {'collection': 'contacts'}
+
 class Tag(EmbeddedDocument):
     name = StringField()
 

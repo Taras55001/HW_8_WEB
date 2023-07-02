@@ -1,7 +1,7 @@
 import json
 
 from connect import session_hw
-from models import Autor, Post, Tag
+from models import Autor, Post, Tag, Contact
 
 autors_json = "./autors.json"
 post_json = "./quotes.json"
